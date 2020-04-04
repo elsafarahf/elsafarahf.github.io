@@ -1,0 +1,409 @@
+a. The main screen design of your shell (the greetings message upon entering / executing your pseudo-shell program).
+
+Code format:
+
+asus@Asus-PC: echo "Hello everyone. We are from Group 6 STIK2044 B. This is our group names:"
+Hello everyone. We are from Group 6 STIK2044 B. This is our group names:
+asus@Asus-PC: cat groupname.txt
+1. Fauzia Elsa Farah (249865)
+2. Lau Siew Hung (254012)
+3. Ch'ng Ooi Jie Yee (254422)
+4. Yang Hao (248317)
+asus@Asus-PC: echo "Prepared for:"
+Prepared for:
+asus@Asus-PC: echo "Dr.Yousef Fazea"
+Dr.Yousef Fazea
+-------------------------------------------------------------------------------
+
+b. List the new command you will proposed as improvement of the traditional linux 
+     command listed in 2.0 (item 5). Describe 	
+	
+a. cp	
+
+asus@Asus-PC:~$ ls
+asus@Asus-PC:~$ mkdir elsa
+asus@Asus-PC:~$ mkdir yvonne
+asus@Asus-PC:~$ cp -r yvonne elsa
+
+ii. the improvement that your commands introduce 
+asus@Asus-PC: echo “copy 3 file in one directory to another directory”
+asus@Asus-PC:~$ ls elsa
+asus@Asus-PC:~$ ls mixfile
+asus@Asus-PC:~$ cp -t mixfile/ elsa/elsa1 elsa/elsa2 elsa/elsa3
+asus@Asus-PC:~$ ls mixfile
+
+b. ls
+asus@Asus-PC:~$ ls elsa
+
+ii. the improvement that your commands introduce 
+asus@Asus-PC: echo ”list specific type of files in a directory”
+asus@Asus-PC:~$ ls elsa
+asus@Asus-PC:~$ ls elsa |grep ".jpeg"
+
+c.mkdir
+asus@Asus-PC:~$ mkdir elsa
+
+ii. the improvement that your commands introduce 
+asus@Asus-PC:~$ echo “create directory structure”
+asus@Asus-PC:~$ mkdir –p operatingsystem/processingapplication/{multitasking,multiprocessing}
+
+d.rmdir
+asus@Asus-PC:~$ ls
+asus@Asus-PC:~$ mkdir elsa
+asus@Asus-PC:~$ mkdir yvonne
+asus@Asus-PC:~$ cp -r yvonne elsa
+asus@Asus-PC:~$ rmdir yvonne
+
+ii. the improvement that your commands introduce 
+asus@Asus-PC:~$ echo “Remove directory and subdirectory at same time”
+asus@Asus-PC:~$ cd elsadoc
+asus@Asus-PC:~/elsadoc$ ls
+asus@Asus-PC:~/elsadoc$ cd
+asus@Asus-PC:~$ rmdir elsadoc/assignment elsadoc/subjectelsadoc
+
+e.mv
+asus@Asus-PC:~$ mkdir hao
+asus@Asus-PC:~$ mkdir muyi
+asus@Asus-PC:~$ mv hao muyi
+
+ii. the improvement that your commands introduce 
+asus@Asus-PC:~$ ls -l *.txt
+ asus@Asus-PC:~$ mv -uv *.txt /home/asus/elsa
+
+f.rm
+asus@Asus-PC:~$ ls
+asus@Asus-PC:~$ mkdir elsa
+asus@Asus-PC:~$ rm -r elsa
+
+ii. the improvement that your commands introduce 
+code format: rm -drf muyi/1
+code format: rm –v
+code format:  rm -v *.txt
+
+g.chmod
+& touch file1 file2 file3 file4
+$ ls -1
+$ chmod u+x file1
+ls -1 file1
+$ chmod o+wx file2
+ls -1 file2
+$ chmod g-r file3
+ls -1 file3
+$ chmod ugo+rwx file4
+ls -1 file4
+
+ii. the improvement that your commands introduce 
+Increase file executable permissions for all user groups
+$ touch file1 file2 file3 file4
+$ ls -l
+total 0
+-rwxr--r-- 1 A254422 A182A 0 May 10 02:10 file1
+-rw-r--rwx 1 A254422 A182A 0 May 10 02:10 file2
+-rw----r-- 1 A254422 A182A 0 May 10 02:10 file3
+-rwxrwxrwx 1 A254422 A182A 0 May 10 02:10 file4
+$ chmod 744 file1
+$ ls -l file1
+-rwxr--r-- 1 A254422 A182A 0 May 10 02:10 file1
+$ chmod 647 file2
+$ ls -l file2
+-rw-r--rwx 1 A254422 A182A 0 May 10 02:10 file2
+$ chmod 604 file3
+$ ls -l file3
+-rw----r-- 1 A254422 A182A 0 May 10 02:10 file3
+$ chmod 777 file4
+$ ls -l file4
+-rwxrwxrwx 1 A254422 A182A 0 May 10 02:10 file4
+
+h.cal
+Code Format :  $ ncal -h
+
+ii. the improvement that your commands introduce 
+We extract only working days from the calendar while also removing all unnecessary data such as empty lines and month headings.
+Code Format :  $ ncal -h | grep -vE "^S|^ |^$"
+
+We can also remove all alphabetic characters.
+Code Format :  $ ncal -h | grep -vE "^S|^ |^$" | sed "s/[[:alpha:]]//g"
+
+The above integers are all working days for a current month. We format and sort them.
+Code Format :  $ ncal -h | grep -vE "^S|^ |^$" | sed "s/[[:alpha:]]//g" | fmt -w 1 | sort -n
+
+If you wish to calculate the number of working days for a current month simply pipe the output to “wc” command.
+Code Format :  $ ncal -h | grep -vE "^S|^ |^$" | sed "s/[[:alpha:]]//g" | fmt -w 1 | sort -n | wc -l
+
+We just want to see the dates for some day of the week.
+Code Format :  $ ncal | grep Th
+
+i.date
+To display today’s date.
+Code Format :  $ date
+
+To display yesterday’s date.
+Code Format :  $ date --date="yesterday"
+
+To display tomorrow’s date.
+Code Format :  $ date --date="next day"
+
+j.cat
+asus@Asus-PC:~$ cat elsafarah
+
+ii. the improvement that your commands introduce 
+asus@Asus-PC:-$ echo “Sort the content of file alphabetically”
+asus@Asus-PC:-$ cat elsafarah | sort –k1,1
+
+k.pwd
+Code Format :  $ /bin/pwd
+
+ii. the improvement that your commands introduce 
+Prints the location of current working directory; list all files, directories (including hidden file) and size. 
+muyi@muyi-ubuntu:~$ pwd; ls-ash
+
+l.who
+asus@Asus-PC:~$ who -a
+
+ii. the improvement that your commands introduce 
+asus@Asus-PC:~$ echo “Display the user information only”
+asus@Asus-PC:~$ who –a | grep “asus”
+
+m.whoami
+asus@Asus-PC:~$ whoami
+
+ii. the improvement that your commands introduce 
+asus@Asus-PC:~$ who am I
+asus@Asus-PC:~$ who am I | awk ‘{print $1}’
+asus@Asus-PC:~$ who am I | awk ‘{print $2}’
+asus@Asus-PC:~$ who am I | awk ‘{print $3}’
+asus@Asus-PC:~$ who am I | awk ‘{print $4}’
+asus@Asus-PC:~$ who am I | awk ‘{print $5}’
+
+
+n.passwd
+ii. the improvement that your commands introduce 
+asus@Asus-PC:~$ echo “Display the status of password”
+asus@Asus-PC:~$ sudo passwd –e guest
+
+o.history
+asus@Asus-PC:~$ history
+
+ii. the improvement that your commands introduce 
+asus@Asus-PC:~$ echo “Delete or clear history of commands”
+asus@Asus-PC:~$ history –c
+asus@Asus-PC:~$ history
+----------------------------------------------------------------------
+
+c. List the command you would propose for question 2.0 (item 6)
+
+FILE MANAGEMENT
+
+a.wc
+asus@Asus-PC:~$ cat groupname.txt
+1. Fauzia Elsa Farah (249865)
+2. Lau Siew Hung (254012)
+3. Ch'ng Ooi Jie Yee (254422)
+4. Yang Hao (248317)
+asus@Asus-PC:~$ echo "Counting all words in file"
+Counting all words in file
+asus@Asus-PC:~$ wc groupname.txt
+
+iv. the improvement that your commands introduce 
+asus@Asus-PC:~$ cat groupname.txt
+1. Fauzia Elsa Farah (249865)
+2. Lau Siew Hung (254012)
+3. Ch'ng Ooi Jie Yee (254422)
+4. Yang Hao (248317)
+asus@Asus-PC:~$ echo "Counting all words in file"
+asus@Asus-PC:~$ wc groupname.txt
+asus@Asus-PC:~$ echo "Prints the number of lines in a file"
+asus@Asus-PC:~$ wc -l groupname.txt
+asus@Asus-PC:~$ echo "Prints the number of words in a file"
+asus@Asus-PC:~$ wc -w groupname.txt
+asus@Asus-PC:~$ echo "Prints the count of characters from a file"
+asus@Asus-PC:~$ wc -m groupname.txt
+asus@Asus-PC:~$ echo "Prints only the length of the longest line in a file"
+asus@Asus-PC:~$ wc -L groupname.txt
+
+b.locate
+asus@Asus-PC:~$ locate .jpg
+
+iii. the improvement that your commands introduce 
+asus@Asus-PC:~$ echo “limited number of search result of specifiq file”
+asus@Asus-PC:~$ locate -n 20 -i "*.jpg"
+
+c.touch
+asus@Asus-PC:~$ touch elsafarah
+asus@Asus-PC:~$ ls -l elsafarah
+
+iv. the improvement that your commands introduce 
+Command to change the date of file 
+
+asus@Asus-PC:~$ touch elsafarah
+asus@Asus-PC:~$ ls-l elsafarah 
+asus@Asus-PC:~$ touch –d ’21 June 2019 11:30’ elsafarah
+
+PROCESS MANAGEMENT
+a.ps
+asus@Asus-PC:~$ ps
+
+iv. the improvement that your commands introduce 
+asus@Asus-PC:~$ echo “show process by name or process id”
+asus@Asus-PC:~$ ps –c apache2
+
+b.nice
+asus@Asus-PC:~$ nice
+
+iii. the improvement that your commands introduce
+asus@Asus-PC:~$ echo “Backup file”	
+asus@Asus-PC:~$ sudo nice –S tar –czf elsabackup ./elsa/*	
+
+c.top
+asus@Asus-PC:~$ top
+
+iv. the improvement that your commands introduce	
+asus@Asus-PC:~$ echo “Display specific user proccess”	
+asus@Asus-PC:~$ top –u asus
+
+MEMORY MANAGEMENT
+a.free
+Code Format :  $ free
+
+iv. improvement of command
+Display the size of memory in Bytes.
+Code Format :  $ free -b
+
+Display the size of memory in Kilo Bytes.
+Code Format :  free -k
+
+Display the size of memory in Megabytes.
+Code Format :  free -m
+
+Display the size of memory in Gigabytes.
+Code Format :  free -g
+
+Display total line at the end.
+Code Format :  free -t
+
+Display high and low memory size statistics.
+Code Format :  free -l
+
+Display free command version information.
+Code Format :  free -V
+
+b.pstree
+Code Format :  $ pstree
+
+iv. improvement of command
+“Wraps” long lines at the edge of our terminal screen.
+Code Format :  $ pstree -1
+
+Showing parts of the tree.
+Code Format :  $ pstree -s 780
+
+Display the list of command line arguments.
+Code Format :  $ pstree -a
+
+To find out the owner of a process in parenthesis.
+Code Format :  pstree -u
+
+c.vmstat
+Code Format :  vmstat
+
+iv. improvement command
+Run vmstat a given number of times with specified time interval.
+Code Format :  vmstat 2 4
+
+Run vmstat command and display timestamp of each execution.
+Code Format :  vmstat 2 4 -t
+
+Listing memory as active and inactive.
+Code Format :  vmstat -a
+
+View disk statistics.
+Code Format :  vmstat -d
+
+Get a summary of I/O operations.
+Code Format :  vmstat -D
+
+Display statistics in megabytes.
+Code Format :  vmstat -S M 1 2 -t
+
+Display table of event counters and memory statistics.
+Code Format :  vmstat -s
+
+DEVICE MANAGEMENT
+a.lsblk
+asus@Asus-PC:~$ lsblk
+
+iv. the improvement that your commands introduce
+a) asus@Asus-PC:~$ echo “To see only the NAME, SIZE and MOUNPOINT attributes for 
+    the block devices”	
+    asus@Asus-PC:~$ lsblk –o NAME, SIZE, MOUNTPOINT
+
+b) asus@Asus-PC:~$ echo “Print the total storage of the physical volumes attached to the 
+     server”
+asus@Asus-PC:~$ lsblk –dn –o NAME,TYPE,SIZE | awk ‘/disk/ {sum+=$NF} END {print sum, “GB”}’
+
+
+b.lscpu
+asus@Asus-PC:~$ lscpu
+
+iv. the improvement that your commands introduce
+asus@Asus-PC:~$ echo “Print only the number of processor”	
+asus@Asus-PC:~$ lscpu | grep ‘CPU(s):’ | head -1 | awk ‘{print $2}’
+
+c.df
+asus@Asus-PC:~$ df
+
+iv. the improvement that your commands introduce
+asus@Asus-PC:~$ echo ”Display information of home file system”	
+asus@Asus-PC:~$ df –hT /home
+------------------------------------------------------------------
+
+BONUS
+Description:
+
+This commands show user how to see the five previous history commands which require user to login with special password to be able to execute a commands. 
+
+Commands format:
+muyi0@ubuntu: ~$ whoami
+muyi0
+muyi0@ubuntu: ~$ echo “MUYI : HI ELSA”
+MUYI : HI  ELSA
+muyi0@ubuntu: ~$ echo “ELSA : HI MUYI”
+ELSA : HI MUYI
+muyi0@ubuntu: ~$ echo “MUYI : HOW ARE YOU?”
+MUYI : HOW ARE YOU?
+muyi0@ubuntu: ~$ echo “ELSA: I AM FINE”
+ELSA: I AM FINE
+muyi0@ubuntu: ~$ history 5
+ 	470 echo  “MUYI: HI ELSA”
+ 	471 echo  “ELSA: HI MUYI”
+ 	472 echo  “MUYI: HOW ARE YOU?”
+ 	473 echo  “ELSA: I AM FINE”
+ 	474 echo  history 5
+muyi0@ubuntu: ~$ su -c “!!”
+su -c “history 5”
+Password:
+muyi0@ubuntu: ~$
+
+ADD NEW USER
+Description
+
+This command can creates a new user and sets a new password for it.
+
+Commands format 
+muyi0@ubuntu: ~$ su
+passwd:
+root@ubuntu:/home/muyi0# useadd -m muyi1
+root@ubuntu:/home/muyi0# passwd muyi1
+Enter new UNIX password: 
+Retype new UNIX password: 
+password: password updated successful
+
+DELETE USER
+Description:
+This command can delete a user.
+
+Commands format
+muyi0@ubuntu: ~$ su
+password:
+root@ubuntu:/home/muyi0# userdel -r muyi1
+userdel: muyi mail spool (/var/mail/muyi1) not found
